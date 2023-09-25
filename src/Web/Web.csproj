@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591;1573</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="$(CommonPrefix).Web.Host" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" />
+      <PackageReference Include="Bogus" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Web.Contracts\Web.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Web.Contracts\Web.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

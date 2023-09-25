@@ -1,0 +1,12 @@
+<Project>
+  <!--Структура решения-->
+  <PropertyGroup>
+    <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+    <BuildPropsDir>$(SolutionDir)</BuildPropsDir>
+    <TestsDir>$(SolutionDir)tests/</TestsDir>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+<!--  Импорт msbuild-свойств, определяемых до загрузки проектного файла-->
+  <Import Project="$(BuildPropsDir)Common.props" /> <!-- Общие свойства -->
+  <Import Project="$(BuildPropsDir)Detect.props" /> <!-- Детектируемые свойства окружения и соглашений-->
+</Project>

@@ -1,0 +1,33 @@
+<Project>
+  <!--Свойства для макросов-->
+  <PropertyGroup>
+    <CompanyName>Suzim</CompanyName>
+    <CurrentDate>$([System.DateTime]::Now.ToString(yyyy.MM.dd))</CurrentDate>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+    <CommonPrefix>Suzim</CommonPrefix>
+  </PropertyGroup>
+  <!--Атрибуты сборки-->
+  <PropertyGroup>
+    <Copyright>Copyright $(CurrentYear) © $(CompanyName). All rights reserved</Copyright>
+    <Authors>$(CompanyName)</Authors>
+    <Company>$(CompanyName)</Company>
+    <AssemblyName>$(CommonPrefix).$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>$(CommonPrefix).$(MSBuildProjectName)</RootNamespace>
+  </PropertyGroup>
+  <!--Сопутствующие артефакты-->
+  <PropertyGroup>
+    <LangVersion>default</LangVersion>
+    <EmbedAllSources>true</EmbedAllSources>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <!--Настройки синтаксиса и анализа-->
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>CS1591;UrlHardcodeAnalyzer;1701;1702;AsyncFixer01</NoWarn>
+  </PropertyGroup>
+
+</Project>
