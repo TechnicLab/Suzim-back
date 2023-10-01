@@ -1,9 +1,7 @@
 using AutoMapper;
 using Suzim.Business.Abstract.Services;
 using Suzim.Business.Models;
-using Suzim.Store.Common.Entities;
 using Suzim.Store.Repositories.Abstract;
-using Suzim.Store.Repositories.Abstract.Shared;
 
 namespace Suzim.Business.Services;
 

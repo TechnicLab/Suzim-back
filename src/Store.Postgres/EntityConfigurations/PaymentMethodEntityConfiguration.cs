@@ -5,9 +5,9 @@ using Suzim.Store.Postgres.Extensions;
 
 namespace Suzim.Store.Postgres.EntityConfigurations;
 
-internal sealed class OrderEntityConfiguration : IEntityTypeConfiguration<OrderRecord>
+internal sealed class PaymentMethodEntityConfiguration : IEntityTypeConfiguration<PaymentMethodRecord>
 {
-    public void Configure(EntityTypeBuilder<OrderRecord> builder)
+    public void Configure(EntityTypeBuilder<PaymentMethodRecord> builder)
     {
         builder.ConfigureBaseEntity();
     }

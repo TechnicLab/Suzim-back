@@ -6,14 +6,24 @@ namespace Suzim.Store.Common;
 public interface ISuzimContext : IDisposable
 {
     /// <summary>
-    /// заказы
+    /// Заказы
     /// </summary>
     DbSet<OrderRecord> Orders { get; }
+    
+    /// <summary>
+    /// Заказчики
+    /// </summary>
+    DbSet<CustomerRecord> Customers { get; }
+    
+    /// <summary>
+    /// Способы оплаты
+    /// </summary>
+    DbSet<PaymentMethodRecord> PaymentMethods { get; }
 
     /// <summary>
-    /// Паллеты
+    /// Продукты
     /// </summary>
-    DbSet<StatusRecord> Statuses { get; }
-    
+    DbSet<ProductRecord> Products { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

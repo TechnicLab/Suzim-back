@@ -5,9 +5,9 @@ using Suzim.Store.Postgres.Extensions;
 
 namespace Suzim.Store.Postgres.EntityConfigurations;
 
-internal sealed class OrderEntityConfiguration : IEntityTypeConfiguration<OrderRecord>
+internal sealed class CustomerEntityConfiguration : IEntityTypeConfiguration<CustomerRecord>
 {
-    public void Configure(EntityTypeBuilder<OrderRecord> builder)
+    public void Configure(EntityTypeBuilder<CustomerRecord> builder)
     {
         builder.ConfigureBaseEntity();
     }

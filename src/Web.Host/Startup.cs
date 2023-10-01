@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Identity;
+using Suzim.Store.Common;
+using Suzim.Store.Postgres;
+using Suzim.Store.Postgres.DI;
 using Suzim.Web.Host.Infrastructure;
 
 namespace Suzim.Web.Host;
@@ -15,7 +19,12 @@ internal sealed class Startup
     {
         services.AddControllers();
         //
-        // services.AddWarehouseContextPostgres("Warehouse");
+        services.AddSuzimContextPostgres("SuzimConnection");
+
+        services.AddDefaultIdentity<IdentityUser>()
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<IdentityContextPostgres>();
+        
         // services.AddBusinessModule();
         // services.AddAutoMapper(WebAssemblyReference.Assembly);
         //
@@ -27,16 +36,17 @@ internal sealed class Startup
 
     public static void Configure(IApplicationBuilder app)
     {
-       // app.UseAutoMigratePostgreSqlScheme();
-       // app.UseSeedData();
         app.UseSwagger();
         app.UseSwaggerUI(options =>
         {
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             options.RoutePrefix = string.Empty;
         });
-
+        
         app.UseRouting();
+        
+        app.UseAuthorization();
+        app.UseAuthentication();
 
         app.UseEndpoints(options =>
             options.MapControllers());

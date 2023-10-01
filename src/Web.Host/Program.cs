@@ -1,10 +1,15 @@
 
+using Suzim.Store.Postgres;
+
 namespace Suzim.Web.Host;
 
 internal sealed class Program
 {
     public static async Task Main(string[] args)
     {
+        await MigrationManager.MigrateSuzimSchema();
+        await MigrationManager.MigrateIdentityScheme();
+      
         await CreateHostBuilder(args, b => ConfigureWebHostBuilder(b))
             .Build()
             .RunAsync();
